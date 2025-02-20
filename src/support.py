@@ -13,6 +13,8 @@ from fake_useragent import UserAgent
 from langchain_postgres import PGVector
 import re
 
+from src import support_bd as bd
+
 def limpiar_string(texto):
     # 1. Mantener solo letras, números, acentos, ñ, puntos y espacios
     try:
@@ -24,7 +26,7 @@ def limpiar_string(texto):
         print(e)
         return ""
 
-def download_insert_data_bd(collection_name):
+def download_insert_data_bd():
     
     try:
         embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
@@ -36,6 +38,16 @@ def download_insert_data_bd(collection_name):
 
         conn_string = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{HOST}:5432/{DB_NAME}"
 
+        supabase_client = bd.init_conection_bd()
+        urls = bd.select_datos("fuentes_urls", supabase_client)
+        coleccion = bd.select_datos("coleccion", supabase_client)
+
+        collection_name = coleccion.data[0].get("name_coleccion")
+
+        url_list = []
+        for u in urls.data:
+            url_list.append(u.get("url"))
+
         vector_store_input = PGVector(
             embeddings=embeddings,
             collection_name=collection_name,
@@ -45,9 +57,7 @@ def download_insert_data_bd(collection_name):
         ua = UserAgent()
         os.environ["USER_AGENT"] = ua.random
 
-        loader = WebBaseLoader(["https://es.wikipedia.org/wiki/Historia_de_la_inteligencia_artificial",
-                                "https://es.wikipedia.org/wiki/Cronolog%C3%ADa_de_la_inteligencia_artificial",
-                                "https://adrianvillegasd.com/breve-historia-de-la-evolucion-de-la-inteligencia-artificial/"])
+        loader = WebBaseLoader(url_list)
         
         docs = loader.load()
 
@@ -63,7 +73,7 @@ def download_insert_data_bd(collection_name):
         indices_documentos = vector_store_input.add_documents(documents=all_splits)
         print(f"Total docs spliteados: {len(indices_documentos)}")
 
-        return docs, len(indices_documentos)
+        return docs, len(indices_documentos), collection_name
     
     except Exception as e:
         print(e)

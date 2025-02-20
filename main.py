@@ -18,9 +18,10 @@ class DataModel(BaseModel):
 async def load_data(data: DataModel):
     try:
         if data.code == os.getenv("secret"):
-            docs, indices_documentos = sp.download_insert_data_bd("rag_ia_2")
+            docs, indices_documentos, collection_name = sp.download_insert_data_bd()
             return {"num_doc": len(docs), 
-                    "total_split_docs": indices_documentos, 
+                    "total_split_docs": indices_documentos,
+                    "collection_name": collection_name, 
                     "docs_loads": docs,
                     "message": "Data loaded successfully"}
         else:
