@@ -100,7 +100,7 @@ pip install -r requirements.txt
 hypercorn main:app --reload
 ```
 
-## Autores ✒️
+## Autores
 
 * **Santiago Rodriguez** - [santiagorodriguez-dev](https://github.com/santiagorodriguez-dev)
 
