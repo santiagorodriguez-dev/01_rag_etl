@@ -1,29 +1,38 @@
 ---
-title: FastAPI
-description: A FastAPI server
-tags:
-  - fastapi
-  - hypercorn
-  - python
+title: Chatbot RAG'S
+description: Chatbot with Rags information from History, Present, Future of AI (gpt-4o-mini from openai)
 ---
 
-# FastAPI Example
+# Backend apis con FastAPI 
 
-This example starts up a [FastAPI](https://fastapi.tiangolo.com/) server.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/-NvLj4?referralCode=CRJ8FE)
 ## ✨ Features
 
 - FastAPI
 - [Hypercorn](https://hypercorn.readthedocs.io/)
 - Python 3
+- langChain, langSmith, langGraph
+- SupaBase (PGVector postgres)
 
 ## 💁‍♀️ How to use
 
-- Clone locally and install packages with pip using `pip install -r requirements.txt`
-- Run locally using `hypercorn main:app --reload`
+- create virtual environment 
+```bash
+python -m venv venv
+```
+- activate virtual environment in Windows
+```bash
+venv\Scripts\activate
+```
+- activate virtual environment in macOS/Linux
+```bash
+source venv/bin/activate
+```
+- Clone locally and install packages with pip using 
+```bash
+pip install -r requirements.txt
+```
+- Run locally using 
+```bash
+hypercorn main:app --reload
+```
 
-## 📝 Notes
-
-- To learn about how to use FastAPI with most of its features, you can visit the [FastAPI Documentation](https://fastapi.tiangolo.com/tutorial/)
-- To learn about Hypercorn and how to configure it, read their [Documentation](https://hypercorn.readthedocs.io/)
