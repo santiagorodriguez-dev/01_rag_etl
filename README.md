@@ -63,6 +63,8 @@ description: Chatbot con información de RAGs sobre la Historia, Presente y Futu
 
 ## Cómo usar
 
+- Hay un fichero .env.example en el raiz del proyecto, renombrar sin el .example y cambiar por los datos correctos.
+
 - Crear un entorno virtual 
 ```bash
 python -m venv venv
