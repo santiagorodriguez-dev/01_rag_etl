@@ -7,7 +7,7 @@ description: Chatbot con información de RAGs sobre la Historia, Presente y Futu
 ## Características
 
 - FastAPI
-- [Hypercorn](https://hypercorn.readthedocs.io/)
+- Hypercorn
 - Python 3
 - langChain, langSmith, langGraph
 - SupaBase (PGVector con PostgreSQL)
@@ -16,50 +16,50 @@ description: Chatbot con información de RAGs sobre la Historia, Presente y Futu
 
 - Esquema de Base de datos
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/BD_1.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/BD_1.PNG)
 
 - datos descargados
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/BD_2.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/BD_2.PNG)
 
 - Coleccion de vectores
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/BD_3.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/BD_3.PNG)
 
 - Fuentes urls
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/BD_4.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/BD_4.PNG)
 
 - Nombre coleccion
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/BD_5.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/BD_5.PNG)
 
 ## ETL
 
 - Diagrama ETL
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/etl.png)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/etl.png)
 
 ## langSmith
 
 - Template promt
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/template_prompt.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/template_prompt.PNG)
 
 - Trazas ejecuciones del modelo
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/trazas_01.PNG)
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/trazas_02.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/trazas_01.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/trazas_02.PNG)
 
 ## Test Apis
 
 - EndPoint load_data
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/api_01.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/api_01.PNG)
 
 - EndPoint call_modelo
      
-![imagen](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/imagen/api_02.PNG)
+![images](https://github.com/santiagorodriguez-dev/rag_01_apis/blob/main/images/api_02.PNG)
 
 ## Cómo usar
 
